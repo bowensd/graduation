@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * describe:系统日志
  *
- * @author unbesito
+ * @author bowen
  * @date 2018/05/09
  */
 @TableName("a_base_syslog")

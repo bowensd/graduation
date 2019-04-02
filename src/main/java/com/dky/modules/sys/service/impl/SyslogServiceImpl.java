@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 /**
 *describe:系统日志
 *
-*@author unbesito
+*@author bowen
 *@date 2018/5/9
 */
 @Service

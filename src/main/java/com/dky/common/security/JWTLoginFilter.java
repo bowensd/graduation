@@ -32,7 +32,7 @@ import java.util.Map;
  * 该类继承自UsernamePasswordAuthenticationFilter，重写了其中的2个方法
  * attemptAuthentication ：接收并解析用户凭证。
  * successfulAuthentication ：用户成功登录后，这个方法会被调用，我们在这个方法里生成token。
- * @author unbesito
+ * @author bowen
  * @date 2018/05/07
  */
 public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
@@ -46,7 +46,7 @@ public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
 
     /**
     *describe: 接收并解析用户凭证
-    *@author unbesito
+    *@author bowen
     *@date 2018/5/7
     */
     @Override
@@ -69,7 +69,7 @@ public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
 
     /**
     *describe: 用户成功登录后，这个方法会被调用，我们在这个方法里生成token
-    *@author unbesito
+    *@author bowen
     *@date 2018/5/7
     */
     @Override
@@ -83,7 +83,7 @@ public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
 
     /**
     *describe: 用户登录失败后，这个方法会被调用，直接返回给前台
-    *@author unbesito
+    *@author bowen
     *@date 2018/5/7
     */
     @Override

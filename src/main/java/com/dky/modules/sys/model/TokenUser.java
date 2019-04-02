@@ -9,7 +9,7 @@ import java.util.Objects;
 /**
 *describe: token用户
 *
-*@author unbesito
+*@author bowen
 *@date 2018/5/3
 */
 @TableName("a_base_user")
@@ -22,12 +22,9 @@ public class TokenUser implements Serializable {
 
     private String password;
 
-
     private String accounts;
 
     private String mobile;
-
-    private Integer stateCode;
 
     public String getPassword() {
         return password;
@@ -69,13 +66,7 @@ public class TokenUser implements Serializable {
         this.mobile = mobile;
     }
 
-    public Integer getStateCode() {
-        return stateCode;
-    }
 
-    public void setStateCode(Integer stateCode) {
-        this.stateCode = stateCode;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -99,7 +90,6 @@ public class TokenUser implements Serializable {
                 ", password='" + password + '\'' +
                 ", accounts='" + accounts + '\'' +
                 ", mobile='" + mobile + '\'' +
-                ", stateCode=" + stateCode +
                 '}';
     }
 }

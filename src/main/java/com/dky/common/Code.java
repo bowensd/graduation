@@ -1,6 +1,6 @@
 package com.dky.common;
 /**
- * Created by unbesito on 2017/11/04.
+ * Created by bowen on 2017/11/04.
  */
 public interface Code {
     /**

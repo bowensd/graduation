@@ -3,7 +3,7 @@ package com.dky.modules.mq.enums;
 /**
  * describe:部门枚举类
  *
- * @author unbesito
+ * @author bowen
  * @date 2018/05/11
  */
 public enum DeptEnum {
@@ -20,7 +20,7 @@ public enum DeptEnum {
     /**
      * describe: 同步状态枚举类
      *
-     * @author unbesito
+     * @author bowen
      * @date 2018/5/11 13:44
      */
     SYNCED("已同步", "1", 1),
@@ -30,7 +30,7 @@ public enum DeptEnum {
     /**
      * describe: 删除枚举类
      *
-     * @author unbesito
+     * @author bowen
      * @date 2018/5/11 13:44
      */
     DELETED("已删除", "1", 1),
@@ -40,7 +40,7 @@ public enum DeptEnum {
     /**
      * describe: 通用状态枚举类
      *
-     * @author unbesito
+     * @author bowen
      * @date 2018/5/11 13:50
      */
     ENABLE("启用", "1", 1),

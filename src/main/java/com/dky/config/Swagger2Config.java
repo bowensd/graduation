@@ -22,7 +22,7 @@ import java.util.List;
 /**
 *describe: swagger2配置类
 *
-*@author unbesito
+*@author bowen
 *@date 2018/5/3
 */
 @Configuration
@@ -42,7 +42,7 @@ public class Swagger2Config {
 
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.laiease.modules"))
+                .apis(RequestHandlerSelectors.basePackage("com.dky.modules"))
                 .paths(PathSelectors.any())
                 .build()
                 .globalOperationParameters(pars)
@@ -53,8 +53,8 @@ public class Swagger2Config {
         return new ApiInfoBuilder()
                 .title("RESTful APIs")
                 .description("laiease服务的RESTful APIs")
-                .termsOfServiceUrl("http://www.laiease.com")
-                .contact("laiease")
+                .termsOfServiceUrl("http://www.dky.com")
+                .contact("dky")
                 .version("1.0")
                 .build();
     }

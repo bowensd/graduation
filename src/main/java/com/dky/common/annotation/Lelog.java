@@ -5,7 +5,7 @@ import java.lang.annotation.*;
 /**
 *describe: 系统日志注解
 *
-*@author unbesito
+*@author bowen
 *@date 2018/5/9
 */
 

@@ -17,7 +17,7 @@ import java.util.*;
 /**
 *describe: 系统中间层和底层使用的util
 *
-*@author unbesito
+*@author bowen
 *@date 2018/5/3
 */
 public class CmUtil {

@@ -10,7 +10,7 @@ import java.util.Map;
 /**
 *describe: 动态数据源
 *
-*@author unbesito
+*@author bowen
 *@date 2018/5/4
 */
 public class DynamicDataSource extends AbstractRoutingDataSource {

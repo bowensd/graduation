@@ -16,7 +16,7 @@ import java.util.Map;
 /**
 *describe: JWT工具类
 *
-*@author unbesito
+*@author bowen
 *@date 2018/5/3
 */
 public class JwtTokenUtil {
@@ -60,7 +60,7 @@ public class JwtTokenUtil {
 
     /**
     *describe: 获取token用户
-    *@author unbesito
+    *@author bowen
     *@date 2018/5/10
     */
     public static String getUsernameByToken(String token) {
@@ -76,7 +76,7 @@ public class JwtTokenUtil {
 
     /**
     *describe: 获取token创建日期
-    *@author unbesito
+    *@author bowen
     *@date 2018/5/10
     */
     public static Date getCreatedDateByToken(String token) {
@@ -92,7 +92,7 @@ public class JwtTokenUtil {
 
     /**
     *describe: 获取超时日期
-    *@author unbesito
+    *@author bowen
     *@date 2018/5/10
     */
     public static Date getExpireDateByToken(String token) {
@@ -108,7 +108,7 @@ public class JwtTokenUtil {
 
     /**
     *describe:获取JWTClaims
-    *@author unbesito
+    *@author bowen
     *@date 2018/5/10
     */
     private static Claims getClaimsFromToken(String token) {
@@ -126,7 +126,7 @@ public class JwtTokenUtil {
 
     /**
     *describe: 获取失效时间
-    *@author unbesito
+    *@author bowen
     *@date 2018/5/10
     */
     private static Date generateExpireDate() {
@@ -135,7 +135,7 @@ public class JwtTokenUtil {
 
     /**
      *describe: 获取用户token
-     *@author unbesito
+     *@author bowen
      *@date 2018/5/10
      */
     public static String generateToken(String name){
@@ -152,7 +152,7 @@ public class JwtTokenUtil {
 
     /**
     *describe: token是否失效
-    *@author unbesito
+    *@author bowen
     *@date 2018/5/10
     */
     public static Boolean isTokenExpired(String token) {
@@ -163,7 +163,7 @@ public class JwtTokenUtil {
 
     /**
     *describe: 创建时间是否在指定时间之前
-    *@author unbesito
+    *@author bowen
     *@date 2018/5/10
     */
     private static Boolean isCreatedBeforeLastPasswordReset(Date created, Date lastPasswordReset) {
@@ -178,7 +178,7 @@ public class JwtTokenUtil {
 
     /**
     *describe: 更新token
-    *@author unbesito
+    *@author bowen
     *@date 2018/5/10
     */
     public String refreshToken(String token) {
@@ -195,7 +195,7 @@ public class JwtTokenUtil {
 
     /**
     *describe: 控制层获取当前登录用户
-    *@author unbesito
+    *@author bowen
     *@date 2018/5/11 9:15
     */
     public static String getUsername(HttpServletRequest request){

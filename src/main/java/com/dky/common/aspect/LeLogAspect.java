@@ -27,7 +27,7 @@ import java.util.Date;
 /**
 *describe: 系统日志切面
 *
-*@author unbesito
+*@author bowen
 *@date 2018/5/9
 */
 @Aspect

@@ -15,7 +15,7 @@ import java.util.Map;
 /**
 *describe:配置多数据源
 *
-*@author unbesito
+*@author bowen
 *@date 2018/5/4
 */
 @Configuration

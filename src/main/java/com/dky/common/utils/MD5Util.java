@@ -12,7 +12,7 @@ import java.security.NoSuchAlgorithmException;
 /**
 *describe: MD5工具类
 *
-*@author unbesito
+*@author bowen
 *@date 2018/5/3
 */
 public class MD5Util {
@@ -23,7 +23,7 @@ public class MD5Util {
 
     /**
     *describe: md5加解密
-    *@author unbesito
+    *@author bowen
     *@date 2018/5/3
     */
     public static String convertMD5(String inStr) {
@@ -39,7 +39,7 @@ public class MD5Util {
     
     /**
     *describe: MD5加密字符串
-    *@author unbesito
+    *@author bowen
     *@date 2018/5/3
     */
     public static String string2MD5(String inStr) {
@@ -79,7 +79,7 @@ public class MD5Util {
     
     /**
     *describe: MD5加密文件
-    *@author unbesito
+    *@author bowen
     *@date 2018/5/3
     */
     public static String md5(File file) {
@@ -132,7 +132,7 @@ public class MD5Util {
     
     /**
     *describe: MD5加密byte数组
-    *@author unbesito
+    *@author bowen
     *@date 2018/5/3
     */
     public static String md5(byte[] bs) {
@@ -182,7 +182,7 @@ public class MD5Util {
 
     /**
     *describe: 
-    *@author unbesito
+    *@author bowen
     *@date 2018/5/3
     */
     public static byte[] md5Byte(String str) {

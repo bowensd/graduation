@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 /**
 *describe: 异常处理器
 *
-*@author unbesito
+*@author bowen
 *@date 2018/5/4
 */
 @RestControllerAdvice

@@ -9,7 +9,7 @@ import java.util.Map;
 /**
 *describe: redis配置信息
 *
-*@author unbesito
+*@author bowen
 *@date 2018/5/3
 */
 @Configuration

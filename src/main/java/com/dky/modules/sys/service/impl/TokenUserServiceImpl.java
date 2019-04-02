@@ -17,7 +17,7 @@ import static java.util.Collections.emptyList;
 /**
 *describe: 用户验证
 *
-*@author unbesito
+*@author bowen
 *@date 2018/5/7
 */
 @Service
@@ -27,7 +27,7 @@ public class TokenUserServiceImpl extends ServiceImpl<TokenUserMapper, TokenUser
     public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
         TokenUser tokenUser = new TokenUser();
         tokenUser.setName(name);
-        tokenUser.setStateCode(DicEnum.ENABLE.getIntegerVal());
+       // tokenUser.setStateCode(DicEnum.ENABLE.getIntegerVal());
         EntityWrapper<TokenUser> entityWrapper = new EntityWrapper<>();
         entityWrapper.setEntity(tokenUser);
         List<TokenUser> tokenUserList = baseMapper.selectList(entityWrapper);

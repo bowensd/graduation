@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
 /**
 *describe:基础配置类
 *
-*@author unbesito
+*@author bowen
 *@date 2018/5/3
 */
 @Configuration
@@ -24,7 +24,7 @@ public class BaseConfig {
     private Logger logger = LoggerFactory.getLogger(getClass());
     /**
     *describe: redisConfig
-    *@author unbesito
+    *@author bowen
     *@date 2018/5/3
     */
     @Autowired
@@ -32,7 +32,7 @@ public class BaseConfig {
 
     /**
     *describe: jwtConfig
-    *@author unbesito
+    *@author bowen
     *@date 2018/5/3
     */
     @Autowired
@@ -40,7 +40,7 @@ public class BaseConfig {
 
     /**
     *describe: ignorePathConfig
-    *@author unbesito
+    *@author bowen
     *@date 2018/5/10
     */
     @Autowired
@@ -48,7 +48,7 @@ public class BaseConfig {
 
     /**
     *describe: redisConfig
-    *@author unbesito
+    *@author bowen
     *@date 2018/5/3
     */
     @Bean
@@ -64,7 +64,7 @@ public class BaseConfig {
 
     /**
     *describe: jwtConfig
-    *@author unbesito
+    *@author bowen
     *@date 2018/5/3
     */
     @Bean
@@ -75,7 +75,7 @@ public class BaseConfig {
 
     /**
     *describe: ignorePathConfig
-    *@author unbesito
+    *@author bowen
     *@date 2018/5/10
     */
     @Bean

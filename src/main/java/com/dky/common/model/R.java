@@ -7,7 +7,7 @@ import java.util.HashMap;
 /**
  * ${DESCRIPTION}
  *
- * @author unbesito
+ * @author bowen
  * @create 2017/12/25
  **/
 public class R extends HashMap<String, Object> {

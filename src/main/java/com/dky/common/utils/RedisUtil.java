@@ -11,7 +11,7 @@ import java.util.Set;
 /**
 *describe: Redis工具类
 *
-*@author unbesito
+*@author bowen
 *@date 2018/5/3
 */
 public class RedisUtil {

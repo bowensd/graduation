@@ -18,7 +18,7 @@ import java.lang.reflect.Method;
 /**
 *describe: 多数据源，切面处理类
 *
-*@author unbesito
+*@author bowen
 *@date 2018/5/4
 */
 @Aspect

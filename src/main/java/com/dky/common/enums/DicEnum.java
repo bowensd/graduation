@@ -4,14 +4,14 @@ public enum DicEnum {
 
     /**
     *describe: 超级管理员ID
-    *@author unbesito
+    *@author bowen
     *@date 2018/5/11 14:05
     */
     SUPERADMIN("超级管理员","1314",1314),
 
     /**
     *describe: 删除枚举类
-    *@author unbesito
+    *@author bowen
     *@date 2018/5/11 13:44
     */
     DELETED("已删除","1",1),
@@ -20,7 +20,7 @@ public enum DicEnum {
 
     /**
     *describe: 通用状态枚举类
-    *@author unbesito
+    *@author bowen
     *@date 2018/5/11 13:50
     */
     ENABLE("启用","1",1),

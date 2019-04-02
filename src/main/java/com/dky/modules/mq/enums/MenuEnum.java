@@ -3,7 +3,7 @@ package com.dky.modules.mq.enums;
 /**
  * describe:菜单枚举类
  *
- * @author unbesito
+ * @author bowen
  * @date 2018/05/11
  */
 public enum MenuEnum {
@@ -15,7 +15,7 @@ public enum MenuEnum {
     /**
      * describe: 删除枚举类
      *
-     * @author unbesito
+     * @author bowen
      * @date 2018/5/11 13:44
      */
     DELETED("已删除", "1", 1),
@@ -25,7 +25,7 @@ public enum MenuEnum {
     /**
      * describe: 通用状态枚举类
      *
-     * @author unbesito
+     * @author bowen
      * @date 2018/5/11 13:50
      */
     ENABLE("启用", "1", 1),
@@ -35,7 +35,7 @@ public enum MenuEnum {
     /**
      * describe: 菜单类型
      *
-     * @author unbesito
+     * @author bowen
      * @date 2018/5/11 14:04
      */
     TYPE_CATALOG("菜单组", "1", 1),

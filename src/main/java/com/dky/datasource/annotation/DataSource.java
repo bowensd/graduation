@@ -5,7 +5,7 @@ import java.lang.annotation.*;
 /**
 *describe: 多数据源注解
 *
-*@author unbesito
+*@author bowen
 *@date 2018/5/4
 */
 @Target(ElementType.METHOD)

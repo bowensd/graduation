@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * describe:
  *
- * @author unbesito
+ * @author bowen
  * @date 2018/05/03
  */
 public class ResponseUtil {

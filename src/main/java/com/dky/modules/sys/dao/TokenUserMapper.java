@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 /**
 *describe: 用户
 *
-*@author unbesito
+*@author bowen
 *@date 2018/5/9
 */
 @Mapper

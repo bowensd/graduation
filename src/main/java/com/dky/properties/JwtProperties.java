@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * describe:JWT配置属性
  *
- * @author unbesito
+ * @author bowen
  * @date 2018/05/03
  */
 @Configuration

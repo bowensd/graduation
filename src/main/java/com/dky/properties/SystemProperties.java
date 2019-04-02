@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 /**
 *describe: 系统运行信息
 *
-*@author unbesito
+*@author bowen
 *@date 2018/5/3
 */
 @Configuration

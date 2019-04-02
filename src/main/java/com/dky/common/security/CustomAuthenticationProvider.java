@@ -17,7 +17,7 @@ import java.util.ArrayList;
 /**
  * describe:
  *
- * @author unbesito
+ * @author bowen
  * @date 2018/05/07
  */
 public class CustomAuthenticationProvider implements AuthenticationProvider {
@@ -36,7 +36,9 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 
         UserDetails userDetails = userDetailsService.loadUserByUsername(name);
         if(null != userDetails){
-            if(userDetails.getPassword().equals(MD5Util.md5(password))){
+            //if(userDetails.getPassword().equals(MD5Util.md5(password))){  这里应该是因为写入用户的时候用户密码使用了MD5加密，所以在数据库中是看不到明文密码的。
+            //而userDetails.getPassword()是数据库中的md5码
+            if(MD5Util.md5(userDetails.getPassword()).equals(MD5Util.md5(password))){
                 ArrayList<GrantedAuthority> authorities = new ArrayList<>();
                 Authentication auth = new UsernamePasswordAuthenticationToken(name, MD5Util.md5(password), authorities);
                 return auth;

@@ -3,14 +3,14 @@ package com.dky.modules.mq.enums;
 /**
  * describe:分页枚举类
  *
- * @author unbesito
+ * @author bowen
  * @date 2018/05/11
  */
 public enum PageEnum {
 
     /**
     *describe: 菜单类型
-    *@author unbesito
+    *@author bowen
     *@date 2018/5/11 14:04
     */
     PAGEDMAXSIZE("每页默认数量","100000",100000),
