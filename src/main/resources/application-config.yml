@@ -1,0 +1,44 @@
+#随机数据
+random:
+  string:${random.value}
+  int:${random.int}
+  bignumber:${random.long}
+  num_10:${random.int(10)}
+  num_10_20:${random.int[10,20]}
+
+#开发者信息
+devinfo:
+  name: bowen
+  desc: 介绍
+
+#JWT
+jwt:
+  # 加密秘钥
+  secret: f4e2e52034348f86b67cde581c0f9eb5
+  # token有效时长，7天，单位秒
+  expire: 7200
+  header: Access-Control-Allow-Token
+  coreid: dky.
+  key: username
+
+# 忽略鉴权url
+ignored:
+  path-list:
+    - /swagger-ui.html
+    - /swagger-resources/**
+    - /swagger/**
+    - /v2/**
+    - /**/*.js
+    - /**/*.css
+    - /**/*.png
+    - /**/*.ico
+    - /druid/**
+  key-list:
+   - swagger
+   - v2
+   - js
+   - css
+   - png
+   - ico
+   - druid
+
