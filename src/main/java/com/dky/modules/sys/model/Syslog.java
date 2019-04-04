@@ -95,4 +95,18 @@ public class Syslog implements Serializable {
     public void setCreateDate(Date createDate) {
         this.createDate = createDate;
     }
+
+    @Override
+    public String toString() {
+        return "Syslog{" +
+                "id='" + id + '\'' +
+                ", username='" + username + '\'' +
+                ", operation='" + operation + '\'' +
+                ", method='" + method + '\'' +
+                ", params='" + params + '\'' +
+                ", time=" + time +
+                ", ip='" + ip + '\'' +
+                ", createDate=" + createDate +
+                '}';
+    }
 }

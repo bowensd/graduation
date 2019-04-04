@@ -7,13 +7,13 @@ import com.dky.modules.mq.enums.PageEnum;
 /**
  * describe: 分页工具类
  *
- * @author bink
+ * @author bowen
  * @date 2018/05/16
  */
 public class PageUtil<T> {
      /**
      *describe: 开启分页
-     *@author bink
+     *@author bowen
      *@date 2018/5/17
      *
      * @param page 分页对象
@@ -37,7 +37,7 @@ public class PageUtil<T> {
 
      /**
      *describe: 开启分页
-     *@author bink
+     *@author bowen
      *@date 2018/5/16
      *
      * @param page 分页对象
@@ -61,7 +61,7 @@ public class PageUtil<T> {
 
      /**
      *describe:开启分页
-     *@author bink
+     *@author bowen
      *@date 2018/5/16
      * @param page 分页对象
      * @param pageSize 每页的大小

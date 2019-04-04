@@ -3,7 +3,7 @@ package com.dky.modules.mq.enums;
 /**
 *describe: 按钮枚举类
 *
-*@author bink
+*@author bowen
 *@date 2018/5/24 14:25
 */
 public enum ButtonEnum {
@@ -13,7 +13,7 @@ public enum ButtonEnum {
     MENUID("菜单ID KEY","menuId",0),
     /**
     *describe: 删除枚举类
-    *@author bink
+    *@author bowen
     *@date 2018/5/24
     */
     DELETED("已删除","1",1),
@@ -22,7 +22,7 @@ public enum ButtonEnum {
 
    /**
    *describe: 通用状态枚举类
-   *@author bink
+   *@author bowen
    *@date 2018/5/24
    */
     ENABLE("启用","1",1),

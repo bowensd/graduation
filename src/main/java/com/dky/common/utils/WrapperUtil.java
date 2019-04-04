@@ -6,14 +6,14 @@ import com.baomidou.mybatisplus.mapper.Wrapper;
 /**
 *describe: Wrapper查询工具类
 *
-*@author bink
+*@author bowen
 *@date 2018/5/24 15:16
 */
 public class WrapperUtil {
 
      /**
      *describe: 设置查询条件--相等
-     * @author bink
+     * @author bowen
      * @date 2018/5/24
      *
      * @param wrapper 查询对象
@@ -36,7 +36,7 @@ public class WrapperUtil {
     }
      /**
      *describe:设置查询条件--相等
-     * @author bink
+     * @author bowen
      * @date 2018/5/24
      *
      * @param wrapper 查询对象

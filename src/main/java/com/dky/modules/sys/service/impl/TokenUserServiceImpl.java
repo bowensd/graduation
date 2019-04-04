@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.dky.common.enums.DicEnum;
 import com.dky.modules.sys.dao.TokenUserMapper;
 import com.dky.modules.sys.model.TokenUser;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -23,6 +25,7 @@ import static java.util.Collections.emptyList;
 @Service
 public class TokenUserServiceImpl extends ServiceImpl<TokenUserMapper, TokenUser> implements UserDetailsService {
 
+    private Logger logger = LoggerFactory.getLogger(getClass());
     @Override
     public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
         TokenUser tokenUser = new TokenUser();
