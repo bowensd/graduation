@@ -1,7 +1,7 @@
 package com.dky.common.aspect;
 
 import com.alibaba.fastjson.JSON;
-import com.dky.common.annotation.Lelog;
+import com.dky.common.annotation.Mylog;
 import com.dky.common.utils.HttpContextUtils;
 import com.dky.common.utils.IPUtils;
 import com.dky.datasource.DataSourceNames;
@@ -32,13 +32,13 @@ import java.util.Date;
 */
 @Aspect
 @Component
-public class LeLogAspect {
+public class MyLogAspect {
     protected Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
     private SyslogService syslogService;
 
-    @Pointcut("@annotation(com.dky.common.annotation.Lelog)")
+    @Pointcut("@annotation(com.dky.common.annotation.Mylog)")
     public void logPointCut() {
 
     }
@@ -63,10 +63,10 @@ public class LeLogAspect {
         Method method = signature.getMethod();
 
         Syslog sysLog = new Syslog();
-        Lelog Lelog = method.getAnnotation(Lelog.class);
-        if(Lelog != null){
+        Mylog Mylog = method.getAnnotation(Mylog.class);
+        if(Mylog != null){
             //注解上的描述
-            sysLog.setOperation(Lelog.value());
+            sysLog.setOperation(Mylog.value());
         }
 
         //请求的方法名
