@@ -10,7 +10,8 @@ public enum ProjectEnum {
 
     STATE_CODE("状态码，1：已选择，0：未选择","state_code",0),
     DELETED_CODE("删除标识Key", "deleted_code", 0),
-
+    TEACHER_ID("教师ID","teacher_id",0),
+    STUDENT_ID("学生ID","student_id",0),
     /**
      * describe: 删除枚举类
      *

@@ -24,6 +24,8 @@ public class Project implements Serializable {
      * 课题名称
      */
     private String name;
+    private Integer teacherId;
+    private Integer studentId;
     /**
      * 题目类型
      */
@@ -68,6 +70,22 @@ public class Project implements Serializable {
     private Integer stateCode;
 
     private String stateName;
+
+    public Integer getTeacherId() {
+        return teacherId;
+    }
+
+    public void setTeacherId(Integer teacherId) {
+        this.teacherId = teacherId;
+    }
+
+    public Integer getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(Integer studentId) {
+        this.studentId = studentId;
+    }
 
     public Integer getStateCode() {
         return stateCode;
@@ -194,6 +212,8 @@ public class Project implements Serializable {
         return "Project{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", teacherId=" + teacherId +
+                ", studentId=" + studentId +
                 ", type='" + type + '\'' +
                 ", source='" + source + '\'' +
                 ", workload='" + workload + '\'' +
