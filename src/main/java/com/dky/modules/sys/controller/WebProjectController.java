@@ -28,11 +28,11 @@ public class WebProjectController {
     @Resource
     ProjectService projectService;
 
-    @Mylog("查询全部课题")
+    @Mylog("获取课题列表")
     @PostMapping(value = "/list")
-    @ApiOperation("获取课题列表")
+    @ApiOperation("获取课题列表,json中加入条件可按条件查询")//"student_id":1,"teacher_id":2
     public R list(@RequestBody JSONObject json) {
-        return R.ok(projectService.list(json));
+        return R.ok(projectService.selectList(json));
     }
 
 
@@ -56,15 +56,17 @@ public class WebProjectController {
         return R.ok(projectService.delete(ids));
     }
 
-    /**根据id查找课题
+    /**根据课题Id查找课题
      *describe:
      *@author bowen
      *@date 2019/4/7
      */
-    @Mylog("根据id查找课题")
+    @Mylog("根据课题id查找课题")
     @GetMapping(value = "/{id}")
-    @ApiOperation("根据Id查找课题")
+    @ApiOperation("根据课题Id查找课题")
     public R selectById(@PathVariable String id){
         return R.ok(projectService.selectById(id));
     }
+
+
 }

@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.dky.common.utils.PageUtil;
+import com.dky.common.utils.WrapperUtil;
 import com.dky.modules.mq.enums.ProjectEnum;
 import com.dky.modules.mq.enums.RoleEnum;
 import com.dky.modules.sys.dao.ProjectMapper;
@@ -72,7 +73,7 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper,Project> imple
      * @date 2019/4/27
      */
     @Override
-    public Page<Project> list(JSONObject json) {
+    public Page<Project> selectList(JSONObject json) {
         //设置分页参数
         Page<Project> page = new Page<>();
         PageUtil.StartPage(page, json);
@@ -83,9 +84,17 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper,Project> imple
 
         //未删除
         ew.eq(ProjectEnum.DELETED_CODE.getStringVal(), ProjectEnum.UNDELETED.getStringVal());
-        //进行查询并翻页
+
+
+        //教师ID
+        WrapperUtil.eq(ew, json, ProjectEnum.TEACHER_ID.getStringVal(),  ProjectEnum.TEACHER_ID.getStringVal());
+
+        //学生ID
+        WrapperUtil.eq(ew, json, ProjectEnum.STUDENT_ID.getStringVal(),  ProjectEnum.STUDENT_ID.getStringVal());
 
         List<Project> list = baseMapper.selectPage(page, ew);
+
+        //进行查询并翻页
         return page.setRecords(list);
     }
 

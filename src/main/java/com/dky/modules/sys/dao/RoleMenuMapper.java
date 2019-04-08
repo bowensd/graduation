@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 /**
 *describe:角色菜单
 *
-*@author bink
+*@author bowen
 *@date 2018/5/23 16:56
 */
 @Mapper

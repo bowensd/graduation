@@ -8,7 +8,7 @@ import java.io.Serializable;
 /**
 *describe:菜单
 *
-*@author bink
+*@author bowen
 *@date 2018/5/23 11:29
 */
 @TableName("a_base_menu")
