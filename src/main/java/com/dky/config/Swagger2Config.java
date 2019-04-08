@@ -52,8 +52,8 @@ public class Swagger2Config {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("RESTful APIs")
-                .description("laiease服务的RESTful APIs")
-                .termsOfServiceUrl("http://www.dky.com")
+                .description("DKY92的RESTful APIs")
+                .termsOfServiceUrl("http://www.besti.edu.cn")
                 .contact("dky")
                 .version("1.0")
                 .build();

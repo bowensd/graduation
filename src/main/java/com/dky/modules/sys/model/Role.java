@@ -2,7 +2,6 @@ package com.dky.modules.sys.model;
 
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
-
 import java.io.Serializable;
 
 /**
@@ -18,7 +17,7 @@ public class Role implements Serializable {
     @TableId
     private String id;
     private String name;
-    private String userId;
+  //  private String userId;
     private Integer deletedCode;
     private String deletedName;
     private Integer stateCode;
@@ -83,13 +82,13 @@ public class Role implements Serializable {
         this.name = name;
     }
 
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
+//    public String getUserId() {
+//        return userId;
+//    }
+//
+//    public void setUserId(String userId) {
+//        this.userId = userId;
+//    }
 
     public String getRemark() {
         return remark;
@@ -104,7 +103,7 @@ public class Role implements Serializable {
         return "Role{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", userId='" + userId + '\'' +
+             //   ", userId='" + userId + '\'' +
                 ", deletedCode=" + deletedCode +
                 ", deletedName='" + deletedName + '\'' +
                 ", stateCode=" + stateCode +

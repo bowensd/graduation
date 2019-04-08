@@ -2,7 +2,6 @@ package com.dky.modules.sys.model;
 
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
-
 import java.io.Serializable;
 import java.util.Date;
 

@@ -2,20 +2,22 @@ package com.dky.modules.sys.model;
 
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
+
 import java.io.Serializable;
 
 /**
-*describe: 角色用户
+*describe: 角色菜单
 *
 *@author bowen
-*@date 2018/5/23 16:51
+*@date 2019/4/7 16:51
 */
-@TableName("a_base_role_user")
-public class RoleUser implements Serializable {
+@TableName("a_base_role_menu")
+public class RoleMenu implements Serializable {
+
 
     @TableId
     private String id;
-    private String userId;
+    private String menuId;
     private String roleId;
 
 
@@ -27,12 +29,12 @@ public class RoleUser implements Serializable {
         this.id = id;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getMenuId() {
+        return menuId;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setMenuId(String menuId) {
+        this.menuId = menuId;
     }
 
     public String getRoleId() {
@@ -45,9 +47,9 @@ public class RoleUser implements Serializable {
 
     @Override
     public String toString() {
-        return "RoleUser{" +
+        return "RoleMenu{" +
         ", id=" + id +
-        ", userId=" + userId +
+        ", menuId=" + menuId +
         ", roleId=" + roleId +
         "}";
     }
