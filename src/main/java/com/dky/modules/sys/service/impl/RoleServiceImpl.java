@@ -117,13 +117,13 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements Ro
         List<Role> list = baseMapper.selectPage(page, ew);
 
         //查询不到返回本身
-        if (list == null || list.size() == 0) {
-            try {
-                list.add(baseMapper.selectById(role.getUserId()));
-            } catch (Exception e) {
-                return page.setRecords(null);
-            }
-        }
+//        if (list == null || list.size() == 0) {
+//            try {
+//                list.add(baseMapper.selectById(role.getUserId()));
+//            } catch (Exception e) {
+//                return page.setRecords(null);
+//            }
+//        }
 
         return page.setRecords(list);
     }
