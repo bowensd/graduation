@@ -53,4 +53,12 @@ public class AssignmentServiceImpl extends ServiceImpl<AssignmentMapper, Assignm
         //进行查询并翻页
         return page.setRecords(list);
     }
+
+    @Override
+    public boolean saveOrUpdate(Assignment assignment) {
+        if(assignment==null)
+            return false;
+        this.insert(assignment);
+        return this.insertOrUpdate(assignment);
+    }
 }
