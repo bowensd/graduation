@@ -2,8 +2,6 @@ package com.dky.modules.sys.model;
 
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
-import com.baomidou.mybatisplus.enums.IdType;
-
 import java.io.Serializable;
 
 /**
@@ -29,12 +27,16 @@ public class Midsupervise implements Serializable {
      * 学生ID
      */
     private Integer studentId;
-
+    /**
+     * 中期报告名
+     */
+    private String name;
     /**
      * 课题ID
      */
     private Integer projectId;
 
+    private Integer teacherId;
     /**
      * 中期报告状态码，1：未审核，2：不合格，3：审核通过
      */
@@ -89,6 +91,21 @@ public class Midsupervise implements Serializable {
         this.studentId = studentId;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getTeacherId() {
+        return teacherId;
+    }
+
+    public void setTeacherId(Integer teacherId) {
+        this.teacherId = teacherId;
+    }
 
     public Integer getProjectId() {
         return projectId;
@@ -172,20 +189,21 @@ public class Midsupervise implements Serializable {
 
     @Override
     public String toString() {
-        return "ABaseMidsupervise{" +
-        ", id=" + id +
-        ", studentId=" + studentId +
-        ", projectId=" + projectId +
-        ", midStateNumber=" + midStateNumber +
-        ", midStateName=" + midStateName +
-        ", isSchedule=" + isSchedule +
-        ", isFinish=" + isFinish +
-        ", finishedText=" + finishedText +
-        ", unfinishedText=" + unfinishedText +
-        ", exitedProblems=" + exitedProblems +
-        ", approach=" + approach +
-        ", attachmentName=" + attachmentName +
-        "}";
+        return "Midsupervise{" +
+                "id=" + id +
+                ", studentId=" + studentId +
+                ", name='" + name + '\'' +
+                ", projectId=" + projectId +
+                ", teacherId=" + teacherId +
+                ", midStateNumber=" + midStateNumber +
+                ", midStateName='" + midStateName + '\'' +
+                ", isSchedule='" + isSchedule + '\'' +
+                ", isFinish='" + isFinish + '\'' +
+                ", finishedText='" + finishedText + '\'' +
+                ", unfinishedText='" + unfinishedText + '\'' +
+                ", exitedProblems='" + exitedProblems + '\'' +
+                ", approach='" + approach + '\'' +
+                ", attachmentName='" + attachmentName + '\'' +
+                '}';
     }
-
 }

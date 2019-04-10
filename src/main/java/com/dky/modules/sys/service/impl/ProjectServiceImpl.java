@@ -11,7 +11,6 @@ import com.dky.modules.mq.enums.ProjectEnum;
 import com.dky.modules.mq.enums.RoleEnum;
 import com.dky.modules.sys.dao.ProjectMapper;
 import com.dky.modules.sys.model.Project;
-import com.dky.modules.sys.model.Role;
 import com.dky.modules.sys.service.ProjectService;
 import org.springframework.stereotype.Service;
 import java.util.HashMap;
@@ -40,7 +39,7 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper,Project> imple
         String msg = "error";
         for (int i = 0; i < ids.size(); i++) {
             Integer id = ids.getInteger(i);
-            List<Role> list = this.selectList(new EntityWrapper().eq(ProjectEnum.STATE_CODE.getStringVal(), id));
+            List<Project> list = this.selectList(new EntityWrapper().eq(ProjectEnum.STATE_CODE.getStringVal(), id));
             if (list != null && list.size() > 0) {
                 errNum++;
                 continue;
@@ -85,7 +84,8 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper,Project> imple
         //未删除
         ew.eq(ProjectEnum.DELETED_CODE.getStringVal(), ProjectEnum.UNDELETED.getStringVal());
 
-
+        //状态码，已选/未选
+        WrapperUtil.eq(ew,json,ProjectEnum.STATE_CODE.getStringVal(),ProjectEnum.STATE_CODE.getStringVal());
         //教师ID
         WrapperUtil.eq(ew, json, ProjectEnum.TEACHER_ID.getStringVal(),  ProjectEnum.TEACHER_ID.getStringVal());
 
