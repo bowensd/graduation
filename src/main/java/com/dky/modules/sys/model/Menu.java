@@ -2,6 +2,7 @@ package com.dky.modules.sys.model;
 
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.enums.IdType;
 
 import java.io.Serializable;
 
@@ -14,10 +15,7 @@ import java.io.Serializable;
 @TableName("a_base_menu")
 public class Menu implements Serializable {
 
-    /**
-     * 主键，UUID
-     */
-    @TableId
+    @TableId(type = IdType.AUTO)
     private String id;
     /**
      * 菜单名称
@@ -31,14 +29,8 @@ public class Menu implements Serializable {
     /**
      * 状态标识：1，启用；0，禁用
      */
-    private Integer stateCode;
-    /**
-     * 状态标识说明：1，启用；0，禁用
-     */
-    private String stateName;
-    /**
-     * 删除标识：1，已删除；0，未删除
-     */
+    private String url;
+    private String icon;
 
     public String getId() {
         return id;
@@ -64,20 +56,20 @@ public class Menu implements Serializable {
         this.pId = pId;
     }
 
-    public Integer getStateCode() {
-        return stateCode;
+    public String getUrl() {
+        return url;
     }
 
-    public void setStateCode(Integer stateCode) {
-        this.stateCode = stateCode;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public String getStateName() {
-        return stateName;
+    public String getIcon() {
+        return icon;
     }
 
-    public void setStateName(String stateName) {
-        this.stateName = stateName;
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
 
     @Override
@@ -86,8 +78,8 @@ public class Menu implements Serializable {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", pId='" + pId + '\'' +
-                ", stateCode=" + stateCode +
-                ", stateName='" + stateName + '\'' +
+                ", url='" + url + '\'' +
+                ", icon='" + icon + '\'' +
                 '}';
     }
 }

@@ -35,7 +35,8 @@ public class WebMenuController {
      *@date 2018/5/23
      */
     @GetMapping("/menuListByUser")
-    @ApiOperation("获取用户的菜单列表")
+    @ApiOperation("获取用户的菜单列表")//request请求中只要包含了token，就可以从token中解密并找到username
+    //原理：token的生成是在用户认证后，用服务器的私钥加密用户信息（用户名），在客户端传递到服务器之后解密并验证用户名即可
     public R menuListByUser (HttpServletRequest request){
         String userName = JwtTokenUtil.getUsername(request);
         return R.ok(menuService.menuListByUserName(userName));

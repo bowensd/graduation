@@ -2,6 +2,8 @@ package com.dky.modules.sys.model;
 
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.enums.IdType;
+
 import java.io.Serializable;
 
 /**
@@ -17,11 +19,8 @@ public class Midsupervise implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    /**
-     * 中期报告ID主键
-     */
-   // @TableId(value = "id", type = IdType.AUTO)
-    @TableId
+
+    @TableId(type = IdType.AUTO)
     private Integer id;
     /**
      * 学生ID
