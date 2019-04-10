@@ -22,7 +22,7 @@ public class Assignment implements Serializable {
     /**
      * 状态
      */
-    private String state;
+    private String stateName;
     /**
      * 状态码，0：未下发，1：已下发，2：已确认查看
      */
@@ -73,12 +73,12 @@ public class Assignment implements Serializable {
         this.id = id;
     }
 
-    public String getState() {
-        return state;
+    public String getStateName() {
+        return stateName;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public void setStateName(String stateName) {
+        this.stateName = stateName;
     }
 
     public Integer getStateCode() {
@@ -165,7 +165,7 @@ public class Assignment implements Serializable {
     public String toString() {
         return "ABaseAssignment{" +
                 ", id=" + id +
-                ", state=" + state +
+                ", stateName=" + stateName +
                 ", stateCode=" + stateCode +
                 ", sendTime=" + sendTime +
                 ", studentId=" + studentId +

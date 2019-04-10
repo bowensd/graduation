@@ -20,8 +20,7 @@ public class Recommend implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    //@TableId(value = "id", type = IdType.AUTO)
-    @TableId
+    @TableId(type = IdType.AUTO)
     private Integer id;
     private Integer studentId;
     private Integer projectId;

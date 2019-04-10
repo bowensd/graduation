@@ -18,7 +18,7 @@ import java.util.List;
 public interface MenuMapper extends BaseMapper<Menu> {
     @Select("SELECT " +
             " menu.* " +
-            "FROM " +
+            "FROM  " +
             " a_base_menu menu " +
             "INNER JOIN a_base_role_menu rm ON rm.menu_id = menu.id " +
             "INNER JOIN a_base_role_user ru ON ru.role_id = rm.role_id " +

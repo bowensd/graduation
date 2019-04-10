@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.dky.modules.sys.model.Group;
 import com.dky.modules.sys.model.User;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import java.util.List;
 
@@ -13,6 +14,7 @@ import java.util.List;
  * @author bowen
  * @date 2019/03/28
  */
+@Mapper
 public interface GroupMapper extends BaseMapper<Group> {
     @Select("SELECT " +
             " * " +

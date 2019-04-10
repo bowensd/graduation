@@ -22,4 +22,5 @@ public class Constant {
     public final static String project = web + "/project";
     public final static String midsupervise = web + "/midsupervise";
     public final static String assignment = web + "/assignment";
+    public final static String group = web + "/group";
 }
