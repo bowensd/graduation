@@ -50,6 +50,31 @@ INSERT INTO `a_base_assignment` VALUES (1,21,11,'主要内容：为解决Hadoop�
 UNLOCK TABLES;
 
 --
+-- Table structure for table `a_base_defense`
+--
+
+DROP TABLE IF EXISTS `a_base_defense`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `a_base_defense` (
+  `id` int(11) NOT NULL,
+  `group_id` int(11) DEFAULT NULL COMMENT '答辩组ID',
+  `time` datetime DEFAULT NULL COMMENT '答辩时间',
+  `place` varchar(255) DEFAULT NULL COMMENT '答辩地点',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `a_base_defense`
+--
+
+LOCK TABLES `a_base_defense` WRITE;
+/*!40000 ALTER TABLE `a_base_defense` DISABLE KEYS */;
+/*!40000 ALTER TABLE `a_base_defense` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `a_base_firstdraft`
 --
 
@@ -91,18 +116,13 @@ DROP TABLE IF EXISTS `a_base_group`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `a_base_group` (
-  `id` int(16) NOT NULL AUTO_INCREMENT,
-  `group_id` int(16) DEFAULT NULL COMMENT '专家组编号',
-  `group_name` varchar(255) DEFAULT NULL COMMENT '专家组名称',
-  `group_leader` int(32) DEFAULT NULL COMMENT '专家组组长ID',
-  `group_secretary` int(32) DEFAULT NULL COMMENT '专家组秘书ID',
-  `group_member` int(32) DEFAULT NULL COMMENT '专家组成员ID',
-  `student_member` varchar(255) DEFAULT NULL COMMENT '学生组成员ID',
-  `time` datetime DEFAULT NULL COMMENT '答辩时间',
-  `place` varchar(255) DEFAULT NULL COMMENT '答辩地点',
-  `remark` varchar(255) DEFAULT NULL COMMENT '备注',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+  `ID` int(11) NOT NULL,
+  `group_id` int(16) DEFAULT NULL COMMENT '答辩组ID',
+  `member_id` int(16) DEFAULT NULL COMMENT '答辩成员ID号',
+  `role_code` int(16) DEFAULT NULL COMMENT '角色ID,1:学生，2：答辩教师，3：答辩秘书，4：答辩组长',
+  `role_name` varchar(255) DEFAULT NULL COMMENT '角色名',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -111,7 +131,7 @@ CREATE TABLE `a_base_group` (
 
 LOCK TABLES `a_base_group` WRITE;
 /*!40000 ALTER TABLE `a_base_group` DISABLE KEYS */;
-INSERT INTO `a_base_group` VALUES (1,1000,'研究生答辩小组',7,6,1,NULL,'2019-04-01 09:40:11','主楼626','备注项'),(2,1000,'研究生答辩小组',7,6,2,NULL,'2019-04-01 09:40:11','主楼626','备注项'),(3,1000,'研究生答辩小组',7,5,1,NULL,'2019-04-01 09:40:11','主楼626','备注项'),(4,1000,'研究生答辩小组',7,5,2,NULL,'2019-04-01 09:40:11','主楼626','备注项');
+INSERT INTO `a_base_group` VALUES (1,1,1,1,'学生'),(2,1,2,1,'学生'),(3,1,4,2,'答辩教师'),(4,1,5,4,'答辩组长'),(5,1,7,3,'答辩秘书');
 /*!40000 ALTER TABLE `a_base_group` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -542,4 +562,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-11  9:42:47
+-- Dump completed on 2019-04-11 12:20:40
