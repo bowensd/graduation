@@ -32,34 +32,17 @@ public class Group implements Serializable {
      */
     private Integer groupId;
     /**
-     * 专家组名称
+     * 答辩成员ID号
      */
-    private String groupName;
+    private Integer memberId;
     /**
-     * 专家组组长ID
+     * 角色ID,1:学生，2：答辩教师，3：答辩秘书，4：答辩组长
      */
-    private Integer groupLeader;
+    private Integer roleCode;
     /**
-     * 专家组秘书ID
+     * 角色名
      */
-    private Integer groupSecretary;
-    /**
-     * 专家组成员ID
-     */
-    private Integer groupMember;
-    /**
-     * 答辩时间
-     */
-    private Date time;
-    /**
-     * 答辩地点
-     */
-    private String place;
-    /**
-     * 备注
-     */
-    private String remark;
-
+    private String roleName;
 
     public Integer getId() {
         return id;
@@ -77,74 +60,38 @@ public class Group implements Serializable {
         this.groupId = groupId;
     }
 
-    public String getGroupName() {
-        return groupName;
+    public Integer getMemberId() {
+        return memberId;
     }
 
-    public void setGroupName(String groupName) {
-        this.groupName = groupName;
+    public void setMemberId(Integer memberId) {
+        this.memberId = memberId;
     }
 
-    public Integer getGroupLeader() {
-        return groupLeader;
+    public Integer getRoleCode() {
+        return roleCode;
     }
 
-    public void setGroupLeader(Integer groupLeader) {
-        this.groupLeader = groupLeader;
+    public void setRoleCode(Integer roleCode) {
+        this.roleCode = roleCode;
     }
 
-    public Integer getGroupSecretary() {
-        return groupSecretary;
+    public String getRoleName() {
+        return roleName;
     }
 
-    public void setGroupSecretary(Integer groupSecretary) {
-        this.groupSecretary = groupSecretary;
-    }
-
-    public Integer getGroupMember() {
-        return groupMember;
-    }
-
-    public void setGroupMember(Integer groupMember) {
-        this.groupMember = groupMember;
-    }
-
-    public Date getTime() {
-        return time;
-    }
-
-    public void setTime(Date time) {
-        this.time = time;
-    }
-
-    public String getPlace() {
-        return place;
-    }
-
-    public void setPlace(String place) {
-        this.place = place;
-    }
-
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark;
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 
     @Override
     public String toString() {
-        return "ABaseGroup{" +
-                ", id=" + id +
+        return "Group{" +
+                "id=" + id +
                 ", groupId=" + groupId +
-                ", groupName=" + groupName +
-                ", groupLeader=" + groupLeader +
-                ", groupSecretary=" + groupSecretary +
-                ", groupMember=" + groupMember +
-                ", time=" + time +
-                ", place=" + place +
-                ", remark=" + remark +
-                "}";
+                ", memberId=" + memberId +
+                ", roleCode=" + roleCode +
+                ", roleName='" + roleName + '\'' +
+                '}';
     }
 }

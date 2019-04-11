@@ -23,10 +23,7 @@ DROP TABLE IF EXISTS `a_base_assignment`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `a_base_assignment` (
-  `id` int(16) NOT NULL,
-  `state` varchar(255) DEFAULT NULL COMMENT '状态',
-  `state_code` int(4) DEFAULT NULL COMMENT '状态码，0：未下发，1：已下发，2：已确认查看',
-  `send_time` datetime DEFAULT NULL COMMENT '下发时间',
+  `id` int(16) NOT NULL AUTO_INCREMENT,
   `student_id` int(16) DEFAULT NULL COMMENT '接收学生id',
   `teacher_id` int(16) DEFAULT NULL COMMENT '发送教师id',
   `assignment_content` longtext COMMENT '主要内容和要求',
@@ -34,9 +31,12 @@ CREATE TABLE `a_base_assignment` (
   `reference` longtext COMMENT '主要参考资料',
   `device` longtext COMMENT '主要仪器设备及材料',
   `place` varchar(255) DEFAULT NULL COMMENT '场地及要求',
+  `send_time` datetime DEFAULT NULL COMMENT '下发时间',
   `answer_time` varchar(255) DEFAULT NULL COMMENT '指导答疑时间安排',
+  `state_code` int(4) DEFAULT NULL COMMENT '状态码，0：未下发，1：已下发，2：已确认查看',
+  `state_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '状态',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +45,7 @@ CREATE TABLE `a_base_assignment` (
 
 LOCK TABLES `a_base_assignment` WRITE;
 /*!40000 ALTER TABLE `a_base_assignment` DISABLE KEYS */;
-INSERT INTO `a_base_assignment` VALUES (1,'已下发',0,'2019-01-01 16:19:40',21,11,'主要内容：为解决Hadoop大数据平台组件的统一授权管理与访问控制问题，本课题设计实现面向Hadoop平台的授权管理与访问控制组件，研究基于策略和用户身份的大数据组件访问权限模型，为Hadoop平台的HDFS、YARN、HBase等大数据平台组件提供一个集中的权限管理机制，通过配置策略来控制用户访问HDFS文件夹、HDFS文件、数据库、表、字段的细粒度权限，支持基于LDAP、文件的用户同步机制，且可扩展，同时权限可与hadoop无缝对接，为大数据平台的安全提供重要支撑。 \r\n主要要求：本文要求在充分调研分析国内外有关大数据平台授权模型与访问控制技术研究现状基础上，研究设计Hadoop大数据平台组件的统一授权管理与访问控制，采用Ranger、Eagle等开源框架研究实现Hadoop平台的授权管理、访问控制与行为审计等功能。 ','（1）资料收集与开题准备：2018.12-2019.2\r\n（2）开题答辩与方案完善：2019.2-2019.3\r\n（3）技术研究与总体设计：2019.3-2019.4  \r\n（4）系统开发与测试：2019.4-2019.5 \r\n（5）撰写学位论文与准备答辩：2019.5-2019.6','《GB/T xxxx大数据安全管理指南》\r\n《GB/T xxxx信息安全技术 数据交易服务安全要求》\r\n《GBT 35274-2017 信息安全技术 大数据服务安全能力要求》\r\n《信息安全技术 数据安全能力成熟度模型》\r\n《GBT 7027-2002 信息分类和编码的基本原则与方法》\r\n《GBT 19715.1-2005 信息技术信息技术安全管理指南第1部分：信息技术安全概念和模型》\r\n政务大数据安全组件设计方案','高性能计算机2台及互联网环境','具备互联网和局域网环境的实验室','每周一、二、三、四、五下午14:00至17:00'),(2,'已下发',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `a_base_assignment` VALUES (1,21,11,'主要内容：为解决Hadoop大数据平台组件的统一授权管理与访问控制问题，本课题设计实现面向Hadoop平台的授权管理与访问控制组件，研究基于策略和用户身份的大数据组件访问权限模型，为Hadoop平台的HDFS、YARN、HBase等大数据平台组件提供一个集中的权限管理机制，通过配置策略来控制用户访问HDFS文件夹、HDFS文件、数据库、表、字段的细粒度权限，支持基于LDAP、文件的用户同步机制，且可扩展，同时权限可与hadoop无缝对接，为大数据平台的安全提供重要支撑。 \r\n主要要求：本文要求在充分调研分析国内外有关大数据平台授权模型与访问控制技术研究现状基础上，研究设计Hadoop大数据平台组件的统一授权管理与访问控制，采用Ranger、Eagle等开源框架研究实现Hadoop平台的授权管理、访问控制与行为审计等功能。 ','（1）资料收集与开题准备：2018.12-2019.2\r\n（2）开题答辩与方案完善：2019.2-2019.3\r\n（3）技术研究与总体设计：2019.3-2019.4  \r\n（4）系统开发与测试：2019.4-2019.5 \r\n（5）撰写学位论文与准备答辩：2019.5-2019.6','《GB/T xxxx大数据安全管理指南》\r\n《GB/T xxxx信息安全技术 数据交易服务安全要求》\r\n《GBT 35274-2017 信息安全技术 大数据服务安全能力要求》\r\n《信息安全技术 数据安全能力成熟度模型》\r\n《GBT 7027-2002 信息分类和编码的基本原则与方法》\r\n《GBT 19715.1-2005 信息技术信息技术安全管理指南第1部分：信息技术安全概念和模型》\r\n政务大数据安全组件设计方案','高性能计算机2台及互联网环境','具备互联网和局域网环境的实验室','2019-01-01 16:19:40','每周一、二、三、四、五下午14:00至17:00',0,'已下发'),(2,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'已下发');
 /*!40000 ALTER TABLE `a_base_assignment` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -91,17 +91,18 @@ DROP TABLE IF EXISTS `a_base_group`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `a_base_group` (
-  `id` int(16) NOT NULL,
+  `id` int(16) NOT NULL AUTO_INCREMENT,
   `group_id` int(16) DEFAULT NULL COMMENT '专家组编号',
   `group_name` varchar(255) DEFAULT NULL COMMENT '专家组名称',
   `group_leader` int(32) DEFAULT NULL COMMENT '专家组组长ID',
   `group_secretary` int(32) DEFAULT NULL COMMENT '专家组秘书ID',
   `group_member` int(32) DEFAULT NULL COMMENT '专家组成员ID',
+  `student_member` varchar(255) DEFAULT NULL COMMENT '学生组成员ID',
   `time` datetime DEFAULT NULL COMMENT '答辩时间',
   `place` varchar(255) DEFAULT NULL COMMENT '答辩地点',
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -110,6 +111,7 @@ CREATE TABLE `a_base_group` (
 
 LOCK TABLES `a_base_group` WRITE;
 /*!40000 ALTER TABLE `a_base_group` DISABLE KEYS */;
+INSERT INTO `a_base_group` VALUES (1,1000,'研究生答辩小组',7,6,1,NULL,'2019-04-01 09:40:11','主楼626','备注项'),(2,1000,'研究生答辩小组',7,6,2,NULL,'2019-04-01 09:40:11','主楼626','备注项'),(3,1000,'研究生答辩小组',7,5,1,NULL,'2019-04-01 09:40:11','主楼626','备注项'),(4,1000,'研究生答辩小组',7,5,2,NULL,'2019-04-01 09:40:11','主楼626','备注项');
 /*!40000 ALTER TABLE `a_base_group` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -121,9 +123,9 @@ DROP TABLE IF EXISTS `a_base_guidance`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `a_base_guidance` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `student_id` int(16) DEFAULT NULL COMMENT '学生ID',
-  `student_name` varchar(255) DEFAULT NULL COMMENT '学生姓名',
+  `teacher_id` int(16) DEFAULT NULL,
   `guidance_date` datetime DEFAULT NULL COMMENT '指导日期',
   `guidance_hour` double(5,0) DEFAULT NULL COMMENT '指导小时数',
   `guidance_content` longtext COMMENT '主要指导内容',
@@ -155,11 +157,13 @@ DROP TABLE IF EXISTS `a_base_menu`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `a_base_menu` (
-  `id` int(11) NOT NULL,
-  `p_id` int(11) DEFAULT NULL,
-  `name` varchar(255) DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `p_id` int(11) DEFAULT NULL COMMENT '菜单父ID',
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '菜单名',
+  `url` varchar(255) DEFAULT NULL COMMENT '菜单URL',
+  `icon` varchar(255) DEFAULT NULL COMMENT '菜单图标',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -168,7 +172,7 @@ CREATE TABLE `a_base_menu` (
 
 LOCK TABLES `a_base_menu` WRITE;
 /*!40000 ALTER TABLE `a_base_menu` DISABLE KEYS */;
-INSERT INTO `a_base_menu` VALUES (1,1,'学生选题');
+INSERT INTO `a_base_menu` VALUES (1,0,'学生选题',NULL,NULL),(2,0,'查看任务书',NULL,NULL),(3,0,'填写开题报告',NULL,NULL),(4,0,'填写中期报告',NULL,NULL),(5,0,'填写指导记录',NULL,NULL),(6,0,'论文初稿',NULL,NULL),(7,0,'查看答辩小组信息',NULL,NULL),(8,0,'答辩记录录入',NULL,NULL),(9,0,'论文定稿',NULL,NULL),(10,0,'答辩延期申请',NULL,NULL),(11,0,'二次答辩申请',NULL,NULL),(12,0,'课题管理',NULL,NULL),(13,12,'发布课题',NULL,NULL),(14,12,'审核课题',NULL,NULL),(15,0,'任务书管理',NULL,NULL),(16,0,'开题报告管理',NULL,NULL),(17,0,'初稿管理',NULL,NULL),(18,0,'定稿管理',NULL,NULL),(19,0,'答辩管理',NULL,NULL);
 /*!40000 ALTER TABLE `a_base_menu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -214,9 +218,10 @@ DROP TABLE IF EXISTS `a_base_paper`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `a_base_paper` (
-  `id` int(16) NOT NULL COMMENT '序号',
-  `project_id` varchar(255) DEFAULT NULL COMMENT '课题ID',
-  `project_name` varchar(255) DEFAULT NULL COMMENT '课题名称',
+  `id` int(16) NOT NULL AUTO_INCREMENT COMMENT '序号',
+  `project_id` int(16) DEFAULT NULL COMMENT '课题ID',
+  `student_id` int(16) DEFAULT NULL COMMENT '学生ID',
+  `teacher_id` int(16) DEFAULT NULL COMMENT '指导教师ID',
   `paper_content` varchar(255) DEFAULT NULL COMMENT '论文内容',
   `reference` varchar(255) DEFAULT NULL COMMENT '参考文献',
   `create_date` datetime DEFAULT NULL COMMENT '创建时间',
@@ -225,7 +230,7 @@ CREATE TABLE `a_base_paper` (
   `deleted_name` varchar(255) DEFAULT NULL COMMENT '是否删除',
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -234,7 +239,7 @@ CREATE TABLE `a_base_paper` (
 
 LOCK TABLES `a_base_paper` WRITE;
 /*!40000 ALTER TABLE `a_base_paper` DISABLE KEYS */;
-INSERT INTO `a_base_paper` VALUES (1,'1','大数据应用','大数据应用论文内容','《hadoop源码解析》','2019-04-08 19:46:29','2019-04-08 19:46:32',NULL,NULL,'无'),(2,'2','大数据平台授权模型与访问控制技术研究与实现','为解决Hadoop大数据平台组件的统一授权管理与访问控制问题，本课题设计实现面向Hadoop平台的授权管理与访问控制组件，研究基于策略和用户身份的大数据组件访问权限模型，为Hadoop平台的HDFS、YARN、HBase等大数据平台组件提供一个集中的权限管理机制，通过配置策略来控制用户访问HDFS文件夹、HDFS文件、数据库、表、字段的细粒度权限，支持基于LDAP、文件的用户同步机制，且可扩展，同时权限可与hadoop无缝对接，为大数据平台的安全提供重要支撑。','Hadoop大数据平台基础\r\nHadoop大数据平台开发\r\nHadoop平台Eagle、Ranger组件开发','2019-03-15 19:48:03','2019-04-08 19:48:09',NULL,NULL,'无');
+INSERT INTO `a_base_paper` VALUES (1,1,NULL,NULL,'大数据应用论文内容','《hadoop源码解析》','2019-04-08 19:46:29','2019-04-08 19:46:32',NULL,NULL,'无'),(2,2,NULL,NULL,'为解决Hadoop大数据平台组件的统一授权管理与访问控制问题，本课题设计实现面向Hadoop平台的授权管理与访问控制组件，研究基于策略和用户身份的大数据组件访问权限模型，为Hadoop平台的HDFS、YARN、HBase等大数据平台组件提供一个集中的权限管理机制，通过配置策略来控制用户访问HDFS文件夹、HDFS文件、数据库、表、字段的细粒度权限，支持基于LDAP、文件的用户同步机制，且可扩展，同时权限可与hadoop无缝对接，为大数据平台的安全提供重要支撑。','Hadoop大数据平台基础\r\nHadoop大数据平台开发\r\nHadoop平台Eagle、Ranger组件开发','2019-03-15 19:48:03','2019-04-08 19:48:09',NULL,NULL,'无');
 /*!40000 ALTER TABLE `a_base_paper` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -246,7 +251,9 @@ DROP TABLE IF EXISTS `a_base_project`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `a_base_project` (
-  `id` int(11) NOT NULL COMMENT '主键',
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `student_id` int(11) DEFAULT NULL,
+  `teacher_id` int(11) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL COMMENT '课题名称',
   `type` varchar(255) DEFAULT NULL COMMENT '题目类型',
   `source` varchar(255) DEFAULT NULL COMMENT '题目来源',
@@ -262,7 +269,7 @@ CREATE TABLE `a_base_project` (
   `state_code` int(255) DEFAULT NULL COMMENT '状态码，2：已审核，1：已选，0：未选',
   `state_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '状态',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -271,7 +278,7 @@ CREATE TABLE `a_base_project` (
 
 LOCK TABLES `a_base_project` WRITE;
 /*!40000 ALTER TABLE `a_base_project` DISABLE KEYS */;
-INSERT INTO `a_base_project` VALUES (1,'大数据应用','毕业设计','校外立项科研','较小','简单','大数据应用课题介绍','需要的工作','《hadoop源码解析》','计算机技术','sss',0,'未删除',0,'未选'),(2,'大数据平台授权模型与访问控制技术研究与实现','毕业设计','校外立项科研','适中','一般','为解决Hadoop大数据平台组件的统一授权管理与访问控制问题，本课题设计实现面向Hadoop平台的授权管理与访问控制组件，研究基于策略和用户身份的大数据组件访问权限模型，为Hadoop平台的HDFS、YARN、HBase等大数据平台组件提供一个集中的权限管理机制，通过配置策略来控制用户访问HDFS文件夹、HDFS文件、数据库、表、字段的细粒度权限，支持基于LDAP、文件的用户同步机制，且可扩展，同时权限可与hadoop无缝对接，为大数据平台的安全提供重要支撑。','掌握信息安全基础知识；\r\n掌握C++和组件开发技术；\r\n具备搭建Hadoop大数据平台的能力。','Hadoop大数据平台基础\r\nHadoop大数据平台开发\r\nHadoop平台Eagle、Ranger组件开发','保密管理 [0402]','无',0,'未删除',1,'已选');
+INSERT INTO `a_base_project` VALUES (1,1,4,'大数据应用','毕业设计','校外立项科研','较小','简单','大数据应用课题介绍','需要的工作','《hadoop源码解析》','计算机技术','sss',0,'未删除',0,'未选'),(2,2,5,'大数据平台授权模型与访问控制技术研究与实现','毕业设计','校外立项科研','适中','一般','为解决Hadoop大数据平台组件的统一授权管理与访问控制问题，本课题设计实现面向Hadoop平台的授权管理与访问控制组件，研究基于策略和用户身份的大数据组件访问权限模型，为Hadoop平台的HDFS、YARN、HBase等大数据平台组件提供一个集中的权限管理机制，通过配置策略来控制用户访问HDFS文件夹、HDFS文件、数据库、表、字段的细粒度权限，支持基于LDAP、文件的用户同步机制，且可扩展，同时权限可与hadoop无缝对接，为大数据平台的安全提供重要支撑。','掌握信息安全基础知识；\r\n掌握C++和组件开发技术；\r\n具备搭建Hadoop大数据平台的能力。','Hadoop大数据平台基础\r\nHadoop大数据平台开发\r\nHadoop平台Eagle、Ranger组件开发','保密管理 [0402]','无',0,'未删除',1,'已选');
 /*!40000 ALTER TABLE `a_base_project` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -314,9 +321,9 @@ DROP TABLE IF EXISTS `a_base_replyrecord`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `a_base_replyrecord` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `usr_id` int(11) NOT NULL,
-  `teacher_id` int(255) NOT NULL,
-  `project_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `student_id` int(11) NOT NULL COMMENT '学生ID',
+  `teacher_id` int(255) NOT NULL COMMENT '指导教师ID',
+  `project_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '课题ID',
   `question_text` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '答辩问题录入',
   `reply_text` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '问题回答录入',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
@@ -342,7 +349,7 @@ DROP TABLE IF EXISTS `a_base_role`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `a_base_role` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `deleted_code` int(255) DEFAULT NULL COMMENT '删除码，1：未删除，0：已删除',
   `deleted_name` varchar(255) DEFAULT NULL COMMENT '删除状态',
@@ -351,7 +358,7 @@ CREATE TABLE `a_base_role` (
   `sort_index` int(255) DEFAULT NULL COMMENT '索引',
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -360,7 +367,7 @@ CREATE TABLE `a_base_role` (
 
 LOCK TABLES `a_base_role` WRITE;
 /*!40000 ALTER TABLE `a_base_role` DISABLE KEYS */;
-INSERT INTO `a_base_role` VALUES (11,'指导教师1',0,'未删除',0,'已启用',0,'备注'),(21,'学生1',0,'未删除',1,'已启用',1,'备注'),(22,'学生2',0,'未删除',1,'已启用',1,'备注'),(31,'教务处老师1',0,'未删除',1,'已启用',1,'备注');
+INSERT INTO `a_base_role` VALUES (1,'指导教师',0,'未删除',1,'已启用',0,'备注'),(2,'学生',0,'未删除',1,'已启用',1,'备注'),(3,'教务处老师',0,'未删除',1,'已启用',1,'备注'),(4,'系统管理员',0,'未删除',1,'已启用',1,'备注');
 /*!40000 ALTER TABLE `a_base_role` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -372,7 +379,7 @@ DROP TABLE IF EXISTS `a_base_role_menu`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `a_base_role_menu` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `role_id` int(11) DEFAULT NULL,
   `menu_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -396,11 +403,11 @@ DROP TABLE IF EXISTS `a_base_role_user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `a_base_role_user` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL COMMENT '用户ID',
   `role_id` int(11) DEFAULT NULL COMMENT '角色ID',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -409,7 +416,7 @@ CREATE TABLE `a_base_role_user` (
 
 LOCK TABLES `a_base_role_user` WRITE;
 /*!40000 ALTER TABLE `a_base_role_user` DISABLE KEYS */;
-INSERT INTO `a_base_role_user` VALUES (1,21,2),(2,22,2);
+INSERT INTO `a_base_role_user` VALUES (1,1,2),(2,2,2),(3,3,2),(4,4,1),(5,5,1),(6,6,1),(7,7,1);
 /*!40000 ALTER TABLE `a_base_role_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -439,7 +446,7 @@ CREATE TABLE `a_base_syslog` (
 
 LOCK TABLES `a_base_syslog` WRITE;
 /*!40000 ALTER TABLE `a_base_syslog` DISABLE KEYS */;
-INSERT INTO `a_base_syslog` VALUES ('1240b88eb1234b409376ecc422b38530','张博文','查询全部课题','com.dky.modules.sys.controller.WebProjectController.list()','{\"additionalProp1\":{},\"additionalProp3\":{},\"additionalProp2\":{}}',68,'0:0:0:0:0:0:0:1','2019-04-07 23:17:33'),('1e34a55547c24f9ab51c99cd887a18e7','张博文','查询全部课题','com.dky.modules.sys.controller.WebProjectController.list()','{\"additionalProp1\":{},\"additionalProp3\":{},\"additionalProp2\":{}}',82,'0:0:0:0:0:0:0:1','2019-04-08 11:09:56'),('293aecf41c604d3ca8d562cb7e509ec4','张博文','获取角色列表','com.dky.modules.sys.controller.WebRoleController.select()','{\"additionalProp1\":{},\"additionalProp3\":{},\"additionalProp2\":{}}',385,'0:0:0:0:0:0:0:1','2019-04-08 08:41:20'),('297bc57b68294196aa84ebbbfd902ced','张博文','根据Id查找角色','com.dky.modules.sys.controller.WebRoleController.selectById()','\"1\"',22,'0:0:0:0:0:0:0:1','2019-04-08 08:37:45'),('2c9bca79962e4c4cb0dd11ded954031e','张博文','查询全部课题','com.dky.modules.sys.controller.WebProjectController.list()','{\"additionalProp1\":{},\"additionalProp3\":{},\"additionalProp2\":{}}',18,'0:0:0:0:0:0:0:1','2019-04-08 11:12:06'),('35f533775c124106ba80cb5ec363e0d7','张博文','根据Id查找角色','com.dky.modules.sys.controller.WebRoleController.selectById()','\"2\"',5,'0:0:0:0:0:0:0:1','2019-04-08 08:37:50'),('434ab712fff745f78d00b391640c2758','张博文','获取角色列表','com.dky.modules.sys.controller.WebRoleController.select()','{\"additionalProp1\":{},\"additionalProp3\":{},\"additionalProp2\":{}}',13,'0:0:0:0:0:0:0:1','2019-04-07 18:46:18'),('436ab945fb5c414dab3384324a12693d','张博文','查询全部课题','com.dky.modules.sys.controller.WebProjectController.list()','{\"additionalProp1\":{},\"additionalProp3\":{},\"additionalProp2\":{}}',14,'0:0:0:0:0:0:0:1','2019-04-08 08:42:25'),('48095399f75841d69847f386ad77842c','张博文','获取角色列表','com.dky.modules.sys.controller.WebRoleController.select()','{\"additionalProp1\":{},\"additionalProp3\":{},\"additionalProp2\":{}}',95,'0:0:0:0:0:0:0:1','2019-04-07 12:55:01'),('4983b72af50e4ca7ba56bfe3269fa22a','张博文','保存或更新角色','com.dky.modules.sys.controller.WebRoleController.saveOrUpdage()','{\"deletedCode\":0,\"deletedName\":\"string\",\"id\":\"1\",\"name\":\"string\",\"remark\":\"string\",\"sortIndex\":0,\"stateCode\":0,\"stateName\":\"string\"}',30,'0:0:0:0:0:0:0:1','2019-04-07 18:44:16'),('4a4880976dcf42a9ad75a90ff46223d0','张博文','删除课题，未删除','com.dky.modules.sys.controller.WebProjectController.deleteProject()','[\"1\"]',13,'0:0:0:0:0:0:0:1','2019-04-08 10:34:18'),('53f52e7a6dc94b689b3cf21be68c3f85','张博文','查询全部课题','com.dky.modules.sys.controller.WebProjectController.list()','{\"additionalProp1\":{},\"additionalProp3\":{},\"additionalProp2\":{}}',23,'0:0:0:0:0:0:0:1','2019-04-08 14:07:37'),('592dcd44c8894874a3c85c0c5830619b','张博文','用户登录token验证','com.dky.modules.sys.controller.WebLoginController.check()',NULL,3,'0:0:0:0:0:0:0:1','2019-04-07 23:15:25'),('60bb9ae9a72e4d959bd10bb206bcbb0c','张博文','获取角色列表','com.dky.modules.sys.controller.WebRoleController.select()','{\"additionalProp1\":{},\"additionalProp3\":{},\"additionalProp2\":{}}',82,'0:0:0:0:0:0:0:1','2019-04-08 13:47:02'),('6c1c9d1d382b4621a2772df7d1b073eb','张博文','删除课题，未删除','com.dky.modules.sys.controller.WebProjectController.deleteProject()','[\"1\"]',24,'0:0:0:0:0:0:0:1','2019-04-08 11:10:41'),('704d116ec1954ddc9499dc97c3b3519b','张博文','查询全部课题','com.dky.modules.sys.controller.WebProjectController.list()','{\"additionalProp1\":{},\"additionalProp3\":{},\"additionalProp2\":{}}',19,'0:0:0:0:0:0:0:1','2019-04-07 23:20:57'),('81d13aaec55b4a4289825f306aaea99b','张博文','根据id查找课题','com.dky.modules.sys.controller.WebProjectController.selectById()','\"1\"',18,'0:0:0:0:0:0:0:1','2019-04-08 11:37:31'),('858aa3efccf44a8982e6a851874c5661','张博文','获取角色列表','com.dky.modules.sys.controller.WebRoleController.select()','{\"additionalProp1\":{},\"additionalProp3\":{},\"additionalProp2\":{}}',18,'0:0:0:0:0:0:0:1','2019-04-07 18:45:45'),('8f76de14afee4dde900e0ac935468a0a','张博文','删除课题，未删除','com.dky.modules.sys.controller.WebProjectController.deleteProject()','[\"1\",\"2\"]',65,'0:0:0:0:0:0:0:1','2019-04-08 10:22:11'),('934f75e356734eeb818f55354117622b','张博文','查询全部课题','com.dky.modules.sys.controller.WebProjectController.list()','{\"additionalProp1\":{},\"additionalProp3\":{},\"additionalProp2\":{}}',81,'0:0:0:0:0:0:0:1','2019-04-08 09:28:20'),('98a4bcfe2c4b49958df23983b06ddda1','张博文','保存或更新课题','com.dky.modules.sys.controller.WebProjectController.saveOrUpdage()','{\"appendix\":\"111\",\"deletedCode\":0,\"deletedName\":\"未删除\",\"difficulty\":\"简单\",\"id\":3,\"introduce\":\"简介\",\"major\":\"string\",\"name\":\"string\"}',13,'0:0:0:0:0:0:0:1','2019-04-08 14:06:40'),('9e495ea776d048a68ef1ff7d0a2e1198','张博文','获取全部用户列表','com.dky.modules.sys.controller.WebLoginController.check()',NULL,0,'0:0:0:0:0:0:0:1','2019-04-07 12:52:33'),('aa4c924de68b4328ba92114942d5258e','张博文','删除课题，未删除','com.dky.modules.sys.controller.WebProjectController.deleteProject()','[\"1\"]',6,'0:0:0:0:0:0:0:1','2019-04-08 10:22:23'),('b8866ba620c04f0895cf1e4cbdba525e','张博文','获取角色列表','com.dky.modules.sys.controller.WebRoleController.select()','{\"additionalProp1\":{},\"additionalProp3\":{},\"additionalProp2\":{}}',276,'0:0:0:0:0:0:0:1','2019-04-07 18:07:54'),('c040f853bbbf4965a4b9fbc4770157aa','张博文','删除课题，未删除','com.dky.modules.sys.controller.WebProjectController.deleteProject()','[\"1\"]',14,'0:0:0:0:0:0:0:1','2019-04-08 10:34:44'),('c9e659138a0d405498ce2a9d9f079dce','张博文','用户登录token验证','com.dky.modules.sys.controller.WebLoginController.check()',NULL,2,'0:0:0:0:0:0:0:1','2019-04-07 16:01:44'),('d183b059a0d9438281d69b8a3dac097c','张博文','获取全部用户列表','com.dky.modules.sys.controller.WebLoginController.check()',NULL,0,'0:0:0:0:0:0:0:1','2019-04-07 12:52:21'),('e695caa204644dc59943b51373223730','张博文','获取角色列表','com.dky.modules.sys.controller.WebRoleController.select()','{\"additionalProp1\":{},\"additionalProp3\":{},\"additionalProp2\":{}}',19,'0:0:0:0:0:0:0:1','2019-04-07 18:08:31'),('fbad0de39513417e939c66d75011779b','张博文','根据Id查找角色','com.dky.modules.sys.controller.WebRoleController.selectById()','\"1\"',5,'0:0:0:0:0:0:0:1','2019-04-07 18:46:27'),('fdb086efd5f84ebb8f94bd1c6db043f8','张博文','根据Id查找角色','com.dky.modules.sys.controller.WebRoleController.selectById()','\"1\"',5,'0:0:0:0:0:0:0:1','2019-04-07 18:44:37');
+INSERT INTO `a_base_syslog` VALUES ('1240b88eb1234b409376ecc422b38530','张博文','查询全部课题','com.dky.modules.sys.controller.WebProjectController.list()','{\"additionalProp1\":{},\"additionalProp3\":{},\"additionalProp2\":{}}',68,'0:0:0:0:0:0:0:1','2019-04-07 23:17:33'),('1e34a55547c24f9ab51c99cd887a18e7','张博文','查询全部课题','com.dky.modules.sys.controller.WebProjectController.list()','{\"additionalProp1\":{},\"additionalProp3\":{},\"additionalProp2\":{}}',82,'0:0:0:0:0:0:0:1','2019-04-08 11:09:56'),('293aecf41c604d3ca8d562cb7e509ec4','张博文','获取角色列表','com.dky.modules.sys.controller.WebRoleController.select()','{\"additionalProp1\":{},\"additionalProp3\":{},\"additionalProp2\":{}}',385,'0:0:0:0:0:0:0:1','2019-04-08 08:41:20'),('297bc57b68294196aa84ebbbfd902ced','张博文','根据Id查找角色','com.dky.modules.sys.controller.WebRoleController.selectById()','\"1\"',22,'0:0:0:0:0:0:0:1','2019-04-08 08:37:45'),('2c9bca79962e4c4cb0dd11ded954031e','张博文','查询全部课题','com.dky.modules.sys.controller.WebProjectController.list()','{\"additionalProp1\":{},\"additionalProp3\":{},\"additionalProp2\":{}}',18,'0:0:0:0:0:0:0:1','2019-04-08 11:12:06'),('35f533775c124106ba80cb5ec363e0d7','张博文','根据Id查找角色','com.dky.modules.sys.controller.WebRoleController.selectById()','\"2\"',5,'0:0:0:0:0:0:0:1','2019-04-08 08:37:50'),('434ab712fff745f78d00b391640c2758','张博文','获取角色列表','com.dky.modules.sys.controller.WebRoleController.select()','{\"additionalProp1\":{},\"additionalProp3\":{},\"additionalProp2\":{}}',13,'0:0:0:0:0:0:0:1','2019-04-07 18:46:18'),('436ab945fb5c414dab3384324a12693d','张博文','查询全部课题','com.dky.modules.sys.controller.WebProjectController.list()','{\"additionalProp1\":{},\"additionalProp3\":{},\"additionalProp2\":{}}',14,'0:0:0:0:0:0:0:1','2019-04-08 08:42:25'),('48095399f75841d69847f386ad77842c','张博文','获取角色列表','com.dky.modules.sys.controller.WebRoleController.select()','{\"additionalProp1\":{},\"additionalProp3\":{},\"additionalProp2\":{}}',95,'0:0:0:0:0:0:0:1','2019-04-07 12:55:01'),('4983b72af50e4ca7ba56bfe3269fa22a','张博文','保存或更新角色','com.dky.modules.sys.controller.WebRoleController.saveOrUpdage()','{\"deletedCode\":0,\"deletedName\":\"string\",\"id\":\"1\",\"name\":\"string\",\"remark\":\"string\",\"sortIndex\":0,\"stateCode\":0,\"stateName\":\"string\"}',30,'0:0:0:0:0:0:0:1','2019-04-07 18:44:16'),('4a4880976dcf42a9ad75a90ff46223d0','张博文','删除课题，未删除','com.dky.modules.sys.controller.WebProjectController.deleteProject()','[\"1\"]',13,'0:0:0:0:0:0:0:1','2019-04-08 10:34:18'),('5346d6660bcf4012818ab70e1269920c','张博文','根据课题id查找课题','com.dky.modules.sys.controller.WebProjectController.selectById()','\"1\"',25,'0:0:0:0:0:0:0:1','2019-04-11 09:28:20'),('53f52e7a6dc94b689b3cf21be68c3f85','张博文','查询全部课题','com.dky.modules.sys.controller.WebProjectController.list()','{\"additionalProp1\":{},\"additionalProp3\":{},\"additionalProp2\":{}}',23,'0:0:0:0:0:0:0:1','2019-04-08 14:07:37'),('592dcd44c8894874a3c85c0c5830619b','张博文','用户登录token验证','com.dky.modules.sys.controller.WebLoginController.check()',NULL,3,'0:0:0:0:0:0:0:1','2019-04-07 23:15:25'),('60bb9ae9a72e4d959bd10bb206bcbb0c','张博文','获取角色列表','com.dky.modules.sys.controller.WebRoleController.select()','{\"additionalProp1\":{},\"additionalProp3\":{},\"additionalProp2\":{}}',82,'0:0:0:0:0:0:0:1','2019-04-08 13:47:02'),('6c1c9d1d382b4621a2772df7d1b073eb','张博文','删除课题，未删除','com.dky.modules.sys.controller.WebProjectController.deleteProject()','[\"1\"]',24,'0:0:0:0:0:0:0:1','2019-04-08 11:10:41'),('704d116ec1954ddc9499dc97c3b3519b','张博文','查询全部课题','com.dky.modules.sys.controller.WebProjectController.list()','{\"additionalProp1\":{},\"additionalProp3\":{},\"additionalProp2\":{}}',19,'0:0:0:0:0:0:0:1','2019-04-07 23:20:57'),('81d13aaec55b4a4289825f306aaea99b','张博文','根据id查找课题','com.dky.modules.sys.controller.WebProjectController.selectById()','\"1\"',18,'0:0:0:0:0:0:0:1','2019-04-08 11:37:31'),('858aa3efccf44a8982e6a851874c5661','张博文','获取角色列表','com.dky.modules.sys.controller.WebRoleController.select()','{\"additionalProp1\":{},\"additionalProp3\":{},\"additionalProp2\":{}}',18,'0:0:0:0:0:0:0:1','2019-04-07 18:45:45'),('8f76de14afee4dde900e0ac935468a0a','张博文','删除课题，未删除','com.dky.modules.sys.controller.WebProjectController.deleteProject()','[\"1\",\"2\"]',65,'0:0:0:0:0:0:0:1','2019-04-08 10:22:11'),('934f75e356734eeb818f55354117622b','张博文','查询全部课题','com.dky.modules.sys.controller.WebProjectController.list()','{\"additionalProp1\":{},\"additionalProp3\":{},\"additionalProp2\":{}}',81,'0:0:0:0:0:0:0:1','2019-04-08 09:28:20'),('98a4bcfe2c4b49958df23983b06ddda1','张博文','保存或更新课题','com.dky.modules.sys.controller.WebProjectController.saveOrUpdage()','{\"appendix\":\"111\",\"deletedCode\":0,\"deletedName\":\"未删除\",\"difficulty\":\"简单\",\"id\":3,\"introduce\":\"简介\",\"major\":\"string\",\"name\":\"string\"}',13,'0:0:0:0:0:0:0:1','2019-04-08 14:06:40'),('9e495ea776d048a68ef1ff7d0a2e1198','张博文','获取全部用户列表','com.dky.modules.sys.controller.WebLoginController.check()',NULL,0,'0:0:0:0:0:0:0:1','2019-04-07 12:52:33'),('aa4c924de68b4328ba92114942d5258e','张博文','删除课题，未删除','com.dky.modules.sys.controller.WebProjectController.deleteProject()','[\"1\"]',6,'0:0:0:0:0:0:0:1','2019-04-08 10:22:23'),('b8866ba620c04f0895cf1e4cbdba525e','张博文','获取角色列表','com.dky.modules.sys.controller.WebRoleController.select()','{\"additionalProp1\":{},\"additionalProp3\":{},\"additionalProp2\":{}}',276,'0:0:0:0:0:0:0:1','2019-04-07 18:07:54'),('bb90a109dbf24ceaafa6509e8ae302bf','张博文','根据课题id查找课题','com.dky.modules.sys.controller.WebProjectController.selectById()','\"1\"',5,'0:0:0:0:0:0:0:1','2019-04-11 09:28:39'),('c040f853bbbf4965a4b9fbc4770157aa','张博文','删除课题，未删除','com.dky.modules.sys.controller.WebProjectController.deleteProject()','[\"1\"]',14,'0:0:0:0:0:0:0:1','2019-04-08 10:34:44'),('c9e659138a0d405498ce2a9d9f079dce','张博文','用户登录token验证','com.dky.modules.sys.controller.WebLoginController.check()',NULL,2,'0:0:0:0:0:0:0:1','2019-04-07 16:01:44'),('d183b059a0d9438281d69b8a3dac097c','张博文','获取全部用户列表','com.dky.modules.sys.controller.WebLoginController.check()',NULL,0,'0:0:0:0:0:0:0:1','2019-04-07 12:52:21'),('d97a1a9f83ab45c296f7571bdfdd8170','张博文','根据课题id查找课题','com.dky.modules.sys.controller.WebProjectController.selectById()','\"2\"',13,'0:0:0:0:0:0:0:1','2019-04-11 09:28:41'),('e695caa204644dc59943b51373223730','张博文','获取角色列表','com.dky.modules.sys.controller.WebRoleController.select()','{\"additionalProp1\":{},\"additionalProp3\":{},\"additionalProp2\":{}}',19,'0:0:0:0:0:0:0:1','2019-04-07 18:08:31'),('fbad0de39513417e939c66d75011779b','张博文','根据Id查找角色','com.dky.modules.sys.controller.WebRoleController.selectById()','\"1\"',5,'0:0:0:0:0:0:0:1','2019-04-07 18:46:27'),('fdb086efd5f84ebb8f94bd1c6db043f8','张博文','根据Id查找角色','com.dky.modules.sys.controller.WebRoleController.selectById()','\"1\"',5,'0:0:0:0:0:0:0:1','2019-04-07 18:44:37');
 /*!40000 ALTER TABLE `a_base_syslog` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -451,7 +458,7 @@ DROP TABLE IF EXISTS `a_base_user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `a_base_user` (
-  `id` int(16) NOT NULL,
+  `id` int(16) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '姓名',
   `accounts` varchar(255) DEFAULT NULL COMMENT '账户',
   `password` varchar(255) DEFAULT NULL COMMENT '密码',
@@ -464,7 +471,7 @@ CREATE TABLE `a_base_user` (
   `deleted_name` varchar(255) DEFAULT NULL COMMENT '是否删除',
   `remark` varchar(255) NOT NULL COMMENT '备注',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -473,7 +480,7 @@ CREATE TABLE `a_base_user` (
 
 LOCK TABLES `a_base_user` WRITE;
 /*!40000 ALTER TABLE `a_base_user` DISABLE KEYS */;
-INSERT INTO `a_base_user` VALUES (21,'张博文','zhangbowen','ceshi',1,'男','15010519788','研究生部','2019-04-07 11:01:33',0,'未删除','备注'),(22,'张子松','zhangzisong','ceshi',1,'男','18810598386','研究生部','2019-04-08 20:00:59',0,'未删除','备注');
+INSERT INTO `a_base_user` VALUES (1,'张博文','zhangbowen','ceshi',1,'男','15010519788','研究生部','2019-04-07 11:01:33',0,'未删除','备注'),(2,'张子松','zhangzisong','ceshi',1,'男','18810598386','研究生部','2019-04-08 20:00:59',0,'未删除','备注'),(3,'牟健','mujian','ceshi',1,'男','18661695727','研究生部','2019-04-11 09:06:11',0,'未删除','备注'),(4,'袁征','yuanzheng','123',0,'女','18833333333','密码系','2019-04-11 09:06:51',0,'未删除','备注'),(5,'冯雁','fengyan','123',0,'女','18833333333','网空系','2019-04-02 09:07:19',0,'未删除','备注项'),(6,'刘念','liunian','123',1,'男','18833333333','网空系','2019-04-02 09:07:49',0,'未删除','备注项'),(7,'杨志成','yangzhicheng','123',1,'男','18833333333','研究生部','2019-04-02 09:08:18',0,'未删除','备注项');
 /*!40000 ALTER TABLE `a_base_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -485,10 +492,10 @@ DROP TABLE IF EXISTS `b_fun_banji`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `b_fun_banji` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `banji` varchar(255) DEFAULT NULL COMMENT '班级',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -509,11 +516,11 @@ DROP TABLE IF EXISTS `b_fun_user_banji`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `b_fun_user_banji` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
   `banji_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -535,4 +542,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-08 20:10:09
+-- Dump completed on 2019-04-11  9:42:47
